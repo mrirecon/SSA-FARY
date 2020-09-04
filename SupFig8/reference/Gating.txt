@@ -1,0 +1,9 @@
+214
+SSA-FARY/ECG sigma  9.031583686530212
+SSA-FARY/ECG sigma_err  0.4375816594127968
+SSA-FARY/ECG sigma [ms] 34.320018008814806
+SSA-FARY/ECG sigma_err [ms] 1.6628103057686279
+Cardiac frequency avg [Hz] 1.195040579231333
+Cardiac frequency avgerr [Hz] 0.0070413461297957215
+Cardiac frequency sigma [Hz] 0.10276506353363722
+Cardiac frequency sigma_err [Hz] 0.0049907126677233935

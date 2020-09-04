@@ -1,0 +1,8 @@
+# Dimensions
+1 3 14 1 1 1 1 1 1 1 2300 1 1 1 1 1 
+# Command
+twixread -A /home/ague/archive/vol/2019-04-15_MRT5_FR4D_0022//meas_MID00038_FID69948_UMG_Radial_14fa5e2_ADCfix_SoS14acc.dat _k pmu 
+# Files
+ >pmu >_k
+# Creator
+BART v0.5.00-87-g1b24eb22
