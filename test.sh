@@ -10,12 +10,12 @@ if [ ! -d $REF ] ; then
 fi
 
 #--- BART ---
-export PATH=$TOOLBOX_PATH:$PATH
-
 if [ ! -e $TOOLBOX_PATH/bart ] ; then
         echo "\$TOOLBOX_PATH is not set correctly!" >&2
         exit 1
 fi
+export PATH=$TOOLBOX_PATH:$PATH
+export BART_COMPAT_VERSION="v0.5.00"
 
 
 bart nrmse -t 0.00001   {.,$REF}/Fig3-4/SS

@@ -13,6 +13,14 @@
 
 set -e 
 
+
+if [ ! -e $TOOLBOX_PATH/bart ] ; then
+        echo "\$TOOLBOX_PATH is not set correctly!" >&2
+        exit 1
+fi
+export PATH=$TOOLBOX_PATH:$PATH
+export BART_COMPAT_VERSION="v0.5.00"
+
 bart resize -c 0 192 1 192 pics_rs _a
 bart slice 13 5 _a _a0
 bart slice 13 6 _a _a1

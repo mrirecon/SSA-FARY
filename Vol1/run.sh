@@ -13,13 +13,13 @@
 
 set -e
 #--- BART ---
-export PATH=$TOOLBOX_PATH:$PATH
 
 if [ ! -e $TOOLBOX_PATH/bart ] ; then
-
         echo "\$TOOLBOX_PATH is not set correctly!" >&2
         exit 1
 fi
+export PATH=$TOOLBOX_PATH:$PATH
+export BART_COMPAT_VERSION="v0.5.00"
 
 #--- Config ---
 #GPU=-g
@@ -49,7 +49,7 @@ bart resize 10 $FRred _k1 k
 # bart slice 13 7 k _ks
 # bart resize 10 50 _ks _kGD
 # bart transpose 10 2 _kGD _kGD1
-# GD=$(bart estdelay -R _tGD1 _kGD1); echo $GD
+# GD=$(DEBUG_LEVEL=0 bart estdelay -R _tGD1 _kGD1); echo $GD
 
 # bart traj $topts -O -q$GD _tGDa
 # bart reshape $(bart bitmask 2 10) 1 $(($SP * $FR)) _tGDa _tGDb
