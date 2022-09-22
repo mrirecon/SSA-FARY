@@ -30,7 +30,8 @@ __view_ [5], and 'convert' from _imagemagick_ [7] and the Linux Biolinum font [8
 are required. The font can be downloaded by running the _get_font.sh_ script
 in the _utils_ folder. To create the movies _ffmpeg_ [9] is used.
 
-Running all scripts will take several days on a multi-core compute system!
+Please note that BART with GPU support is required.
+Running all scripts will take more than 24 hours, even on a multi-core compute system!
 
 
 If you need further help to run the scripts, I am happy to help you: sebastian.rosenzweig@med.uni-goettingen.de
