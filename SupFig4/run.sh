@@ -30,7 +30,8 @@ PAR=1
 FR=3800
 FRred=19000
 # same "full" k-space as for Fig4
-DATA=../data/SS/Fig3-4/
+source ../ssa_fary_utils/data_loc.sh
+DATA="${DATA_LOC}"/SS/Fig3-4/
 
 #--- kspace ---
 bart reshape $(bart bitmask 0 1 2 10) 1 $RO 1 $(($SP * $FR)) $DATA/ksp _k1

@@ -73,13 +73,13 @@ done
 h=$(convert _S_noise.png -print "%h\n" _tmp.png)
 for i in _U*png _k*png _noise.png _trend.png _spell.png *noise_0*png *noise_2*.png *trend_0*png *trend_2*png *spell_0*png; do
 
-	python3 ../utils/figcreator.py --resize "y:${h}:crop" $i $i
+	python3 ../ssa_fary_utils/figcreator.py --resize "y:${h}:crop" $i $i
 done
 
 # Tile
 for type in "noise" "spell" "trend"; do
 
-	python3 ../utils/figcreator.py --tile '3x3' --spacing 40 \
+	python3 ../ssa_fary_utils/figcreator.py --tile '3x3' --spacing 40 \
 	_${type}.png _k_${type}.png _S_${type}.png \
 	_U_${type}_1.png _EOF_${type}_0_1.png _EOF_${type}_scatter_0_1.png \
 	_U_${type}_2.png _EOF_${type}_2_3.png _EOF_${type}_scatter_2_3.png \
@@ -89,23 +89,23 @@ done
 
 # Arrange
 # a)
-python3 ../utils/figcreator.py --tile '1x3' _osc_sin1.png _osc_sin2.png _k_sin.png   --spacing 40 _a.png
-python3 ../utils/figcreator.py -t "LTh:a) " _a.png _a.png
+python3 ../ssa_fary_utils/figcreator.py --tile '1x3' _osc_sin1.png _osc_sin2.png _k_sin.png   --spacing 40 _a.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:a) " _a.png _a.png
 w=$(convert _a.png -print "%w\n" _tmp.png)
 
 # b)
-python3 ../utils/figcreator.py -t "LTh:b) " _res_noise.png _b.png
-python3 ../utils/figcreator.py --resize "x:${w}:crop" _b.png _b.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:b) " _res_noise.png _b.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:${w}:crop" _b.png _b.png
 
 # c)
-python3 ../utils/figcreator.py -t "LTh:c) " _res_spell.png _c.png
-python3 ../utils/figcreator.py --resize "x:${w}:crop" _c.png _c.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:c) " _res_spell.png _c.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:${w}:crop" _c.png _c.png
 # d)
-python3 ../utils/figcreator.py -t "LTh:d) " _res_trend.png _d.png
-python3 ../utils/figcreator.py --resize "x:${w}:crop" _d.png _d.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:d) " _res_trend.png _d.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:${w}:crop" _d.png _d.png
 
 # Join
-python3 ../utils/figcreator.py --tile "4x1" --spacing 100 _a.png _b.png _c.png _d.png SupFig3_FreqVar.png
+python3 ../ssa_fary_utils/figcreator.py --tile "4x1" --spacing 100 _a.png _b.png _c.png _d.png SupFig3_FreqVar.png
 
 rm _*.png
 

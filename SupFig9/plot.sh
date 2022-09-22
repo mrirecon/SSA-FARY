@@ -54,7 +54,7 @@ done
 
 #--- Plot ---
 python3 plot_data.py
-python3 ../utils/figcreator.py -t "LTh:a)" _out.png _a.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:a)" _out.png _a.png
 
 #--- Process Images ---
 s0=6
@@ -65,37 +65,37 @@ s0_1based=$(($s0 + 1))
 s1_1based=$(($s1 + 1))
 s2_1based=$(($s2 + 1))
 
-python3 ../utils/figcreator.py -t "TCh:Slice $s0_1based" ECG/_enddia_s_slice${s0}.png __cTop0.png
-python3 ../utils/figcreator.py -t "LCv:end-diastole   " __cTop0.png _cTop0.png
-python3 ../utils/figcreator.py -t "TCh:Slice $s1_1based" ECG/_enddia_s_slice${s1}.png _cTop1.png
-python3 ../utils/figcreator.py -t "TCh:Slice $s2_1based" ECG/_enddia_s_slice${s2}.png _cTop2.png
-python3 ../utils/figcreator.py --tile 1x3 _cTop{0,1,2}.png _cTop.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:Slice $s0_1based" ECG/_enddia_s_slice${s0}.png __cTop0.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-diastole   " __cTop0.png _cTop0.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:Slice $s1_1based" ECG/_enddia_s_slice${s1}.png _cTop1.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:Slice $s2_1based" ECG/_enddia_s_slice${s2}.png _cTop2.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _cTop{0,1,2}.png _cTop.png
 
-python3 ../utils/figcreator.py -t "LCv:end-systole" ECG/_endsys_s_slice${s0}.png _cBottom0.png
-python3 ../utils/figcreator.py --tile 1x3 _cBottom0.png ECG/_endsys_s_slice${s1}.png ECG/_endsys_s_slice${s2}.png  _cBottom.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-systole" ECG/_endsys_s_slice${s0}.png _cBottom0.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _cBottom0.png ECG/_endsys_s_slice${s1}.png ECG/_endsys_s_slice${s2}.png  _cBottom.png
 
 
-python3 ../utils/figcreator.py --tile 2x1 _cTop.png _cBottom.png _b1.png
-python3 ../utils/figcreator.py --resize "x:1614:iso" _b1.png _b2.png
-python3 ../utils/figcreator.py -t "TCh:SSA-FARY" _b2.png _b3.png
-python3 ../utils/figcreator.py -t "LTh:b)" _b3.png _b.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 _cTop.png _cBottom.png _b1.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:1614:iso" _b1.png _b2.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:SSA-FARY" _b2.png _b3.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:b)" _b3.png _b.png
 
 # ECG
-python3 ../utils/figcreator.py -t "LCv:end-diastole   " ECG/ECG-dia-cor${s0}.jpg _dTop0.png
-python3 ../utils/figcreator.py --tile 1x3 _dTop0.png ECG/ECG-dia-cor${s1}.jpg  ECG/ECG-dia-cor${s2}.jpg _dTop.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-diastole   " ECG/ECG-dia-cor${s0}.jpg _dTop0.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _dTop0.png ECG/ECG-dia-cor${s1}.jpg  ECG/ECG-dia-cor${s2}.jpg _dTop.png
 
-python3 ../utils/figcreator.py -t "LCv:end-systole" ECG/ECG-sys-cor${s0}.jpg _dBottom0.png
-python3 ../utils/figcreator.py --tile 1x3 _dBottom0.png ECG/ECG-sys-cor${s1}.jpg ECG/ECG-sys-cor${s2}.jpg  _dBottom.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-systole" ECG/ECG-sys-cor${s0}.jpg _dBottom0.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _dBottom0.png ECG/ECG-sys-cor${s1}.jpg ECG/ECG-sys-cor${s2}.jpg  _dBottom.png
 
-python3 ../utils/figcreator.py --tile 2x1 _dTop.png _dBottom.png _d1.png
-python3 ../utils/figcreator.py --resize "x:1614:iso" _d1.png _d2.png
-python3 ../utils/figcreator.py -t "TCh:ECG-CINE" _d2.png _d3.png
-python3 ../utils/figcreator.py -t "LTh:c)" _d3.png _d.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 _dTop.png _dBottom.png _d1.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:1614:iso" _d1.png _d2.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:ECG-CINE" _d2.png _d3.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:c)" _d3.png _d.png
 
 
 #--- Join ---
-python3 ../utils/figcreator.py --tile 2x1 _a.png _b.png _ab.png
-python3 ../utils/figcreator.py --tile 2x1 --spacing 35 _ab.png _d.png SupFig9_SoS_V7.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 _a.png _b.png _ab.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 --spacing 35 _ab.png _d.png SupFig9_SoS_V7.png
 
 
 rm _*.png

@@ -23,14 +23,20 @@ fi
 export PATH=$TOOLBOX_PATH:$PATH
 export BART_COMPAT_VERSION="v0.5.00"
 
-
+# get data either from sim, or from data archive
+source ../ssa_fary_utils/data_loc.sh
 
 for type in "sin" "spell" "trend" "noise"; do
+	if [ ! -f k_${type}.cfl ] ; then
+		DATA=${DATA_LOC}/sim/SupFig3/k_${type}
+	else
+		DATA=./k_${type}
+	fi
 
-	bart ssa -w101 k_$type EOF_$type S_${type}
+	bart ssa -w101 ${DATA} EOF_$type S_${type}
 
 	# Global PCA
-	bart ssa -w1 k_$type U_$type S_pca_${type}
+	bart ssa -w1 ${DATA} U_$type S_pca_${type}
 done
 
 

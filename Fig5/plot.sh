@@ -53,41 +53,41 @@ b3=9
 b4=15
 b5=18
 
-python3 ../utils/figcreator.py --tile 1x5 \
+python3 ../ssa_fary_utils/figcreator.py --tile 1x5 \
 _SMS3_endexp_b${b1}_u_0000.png _SMS3_endexp_b${b2}_u_0000.png _SMS3_endexp_b${b3}_u_0000.png _SMS3_endexp_b${b4}_u_0000.png _SMS3_endexp_b${b5}_u_0000.png \
 __SMS3_endexp_0.png
-python3 ../utils/figcreator.py -t "LCv:Slice 1" __SMS3_endexp_0.png _a0.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:Slice 1" __SMS3_endexp_0.png _a0.png
 
-python3 ../utils/figcreator.py --stroke 308:178:308:338:4:8 _SMS3_endexp_b${b1}_u_0001.png _SMS3_endexp_b${b1}_u_0001-stroke.png
+python3 ../ssa_fary_utils/figcreator.py --stroke 308:178:308:338:4:8 _SMS3_endexp_b${b1}_u_0001.png _SMS3_endexp_b${b1}_u_0001-stroke.png
 
-python3 ../utils/figcreator.py --tile 1x5 \
+python3 ../ssa_fary_utils/figcreator.py --tile 1x5 \
 _SMS3_endexp_b${b1}_u_0001-stroke.png _SMS3_endexp_b${b2}_u_0001.png _SMS3_endexp_b${b3}_u_0001.png _SMS3_endexp_b${b4}_u_0001.png _SMS3_endexp_b${b5}_u_0001.png \
 __SMS3_endexp_1.png
-python3 ../utils/figcreator.py -t "LCv:Slice 2" __SMS3_endexp_1.png _a1.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:Slice 2" __SMS3_endexp_1.png _a1.png
 
-python3 ../utils/figcreator.py --tile 1x5 \
+python3 ../ssa_fary_utils/figcreator.py --tile 1x5 \
 _SMS3_endexp_b${b1}_u_0002.png _SMS3_endexp_b${b2}_u_0002.png _SMS3_endexp_b${b3}_u_0002.png _SMS3_endexp_b${b4}_u_0002.png _SMS3_endexp_b${b5}_u_0002.png \
 __SMS3_endexp_2.png
 
-python3 ../utils/figcreator.py -t "LCv:Slice 3" __SMS3_endexp_2.png __a2.png
-python3 ../utils/figcreator.py -t "BLh:Cardiac Cycle →" __a2.png _a2.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:Slice 3" __SMS3_endexp_2.png __a2.png
+python3 ../ssa_fary_utils/figcreator.py -t "BLh:Cardiac Cycle →" __a2.png _a2.png
 
 
-python3 ../utils/figcreator.py --tile 3x1 _a0.png _a1.png _a2.png _a.png
+python3 ../ssa_fary_utils/figcreator.py --tile 3x1 _a0.png _a1.png _a2.png _a.png
 
 
 # Respiration curve
 python3 plot.py _SMS3_RT.png EOF_345 resp/resp3_full.resp _resp
 convert -trim _resp.png _b3.png
-python3 ../utils/figcreator.py --resize "x:1950:iso" _b3.png __b.png
-python3 ../utils/figcreator.py --textpad 0.2 -t "LCh:Y" __b.png __b3.png
-python3 ../utils/figcreator.py -t "BLh:Time →" __b3.png _b.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:1950:iso" _b3.png __b.png
+python3 ../ssa_fary_utils/figcreator.py --textpad 0.2 -t "LCh:Y" __b.png __b3.png
+python3 ../ssa_fary_utils/figcreator.py -t "BLh:Time →" __b3.png _b.png
 
 
 # Join
-python3 ../utils/figcreator.py -t "LTh:a)" _a.png __a.png
-python3 ../utils/figcreator.py -t "LTh:b)" _b.png __b.png
-python3 ../utils/figcreator.py --tile 2x1 __a.png __b.png Fig5_SMS.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:a)" _a.png __a.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:b)" _b.png __b.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 __a.png __b.png Fig5_SMS.png
 
 rm _*.png
 rm _*.{cfl,hdr}

@@ -22,13 +22,16 @@ export PATH=$TOOLBOX_PATH:$PATH
 export BART_COMPAT_VERSION="v0.5.00"
 
 #--- Config ---
-#GPU=-g
+GPU=-g
+#GPU=""
 RO=384
 SP=5
 PAR=1
 FR=5120
 FRred=11539
-DATA=../data/SS/SupFig5-6/
+
+source ../ssa_fary_utils/data_loc.sh
+DATA="${DATA_LOC}"/SS/SupFig5-6/
 
 #--- kspace ---
 bart reshape $(bart bitmask 0 1 2 10) 1 $RO 1 $(($SP * $FR)) $DATA/ksp _k1

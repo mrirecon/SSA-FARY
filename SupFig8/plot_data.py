@@ -30,7 +30,7 @@ marker = ["o", "^", "s", "8"]
 import matplotlib.font_manager as font_manager
 from matplotlib import rcParams
 mpl.rcParams.update({'font.size': 22})
-path = '../utils/LinBiolinum_R.otf'
+path = '../ssa_fary_utils/LinBiolinum_R.otf'
 prop = font_manager.FontProperties(fname=path)
 mpl.rcParams['font.family'] = prop.get_name()
 import pandas as pd

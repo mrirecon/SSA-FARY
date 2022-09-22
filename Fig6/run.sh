@@ -24,13 +24,15 @@ export BART_COMPAT_VERSION="v0.5.00"
 
 
 #--- Config ---
-#GPU=-g
+GPU=-g
+#GPU=""
 RO=384
 SP=3
 PAR=14
 FR=2300
 FRred=5922
-DATA=../data/SoS/Vol5_Fig6
+source ../ssa_fary_utils/data_loc.sh
+DATA="${DATA_LOC}"/SoS/Vol5_Fig6
 
 #--- kspace ---
 bart transpose 2 13 $DATA/ksp _k0
@@ -176,7 +178,7 @@ bart resize -c 0 192 1 192 pics_W${W}_Tr${Tr}_Tc${Tc}_Ts${Ts}_i80 pics_rs
 
 
 #--- Gating ---
-python3 ../utils/gating_analysis.py > Gating.txt
+python3 ../ssa_fary_utils/gating_analysis.py > Gating.txt
 
 
 #--- Clean up ---

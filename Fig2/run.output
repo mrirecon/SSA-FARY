@@ -1,0 +1,8 @@
+S_noise 0.003 CFL_NRMSE
+S_pca_noise 0.003 CFL_NRMSE
+S_pca_sin 0.003 CFL_NRMSE
+S_pca_spell 0.003 CFL_NRMSE
+S_pca_trend 0.003 CFL_NRMSE
+S_sin 0.003 CFL_NRMSE
+S_spell 0.003 CFL_NRMSE
+S_trend 0.003 CFL_NRMSE

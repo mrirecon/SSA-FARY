@@ -31,7 +31,7 @@ done
 
 for i in {0000..0024}; do
 
-	python3 ../utils/figcreator.py --tile 1x2 SS_R2_frame_${i}.png SS_R7_frame_${i}.png SS_card_${i}.png
+	python3 ../ssa_fary_utils/figcreator.py --tile 1x2 SS_R2_frame_${i}.png SS_R7_frame_${i}.png SS_card_${i}.png
 done
 
 
@@ -51,7 +51,7 @@ for j in {0..3}; do
 
 		k=$(($i + ($j * 9)))
 		echo $k
-		python3 ../utils/figcreator.py --tile 1x2 SS_C0_s_${i}.png SS_C11_s_${i}.png SS_s_${k}.png
+		python3 ../ssa_fary_utils/figcreator.py --tile 1x2 SS_C0_s_${i}.png SS_C11_s_${i}.png SS_s_${k}.png
 	done
 done
 

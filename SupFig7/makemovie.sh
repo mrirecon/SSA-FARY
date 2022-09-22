@@ -32,7 +32,7 @@ done
 for Rstate in 8; do
 	for i in {0000..0024}; do
 
-		python3 ../utils/figcreator.py --tile 1x3 SMS_R${Rstate}_frame_${i}_u_0002.png SMS_R${Rstate}_frame_${i}_u_0001.png SMS_R${Rstate}_frame_${i}_u_0000.png SMS_R${Rstate}_${i}.png
+		python3 ../ssa_fary_utils/figcreator.py --tile 1x3 SMS_R${Rstate}_frame_${i}_u_0002.png SMS_R${Rstate}_frame_${i}_u_0001.png SMS_R${Rstate}_frame_${i}_u_0000.png SMS_R${Rstate}_${i}.png
 	done
 done
 

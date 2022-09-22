@@ -67,10 +67,10 @@ done
 
 #--- Plot ---
 python3 plot_data.py
-python3 ../utils/figcreator.py -t "LTh:a)" _out.png _a.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:a)" _out.png _a.png
 
 python3 plot_data2.py
-python3 ../utils/figcreator.py -t "LTh:b)" _out2.png _b.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:b)" _out2.png _b.png
 
 
 #--- Process Images ---
@@ -85,40 +85,40 @@ s1_1based=$(($s1 + 1))
 s2_1based=$(($s2 + 1))
 
 # SSA-FARY
-python3 ../utils/figcreator.py -t "TCh:Slice $s0_1based" ECG/_enddia_s_slice${s0}.png __cTop0.png
-python3 ../utils/figcreator.py -t "LCv:end-diastole   " __cTop0.png _cTop0.png
-python3 ../utils/figcreator.py -t "TCh:Slice $s1_1based" ECG/_enddia_s_slice${s1}.png _cTop1.png
-python3 ../utils/figcreator.py -t "TCh:Slice $s2_1based" ECG/_enddia_s_slice${s2}.png _cTop2.png
-python3 ../utils/figcreator.py --tile 1x3 _cTop{0,1,2}.png _cTop.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:Slice $s0_1based" ECG/_enddia_s_slice${s0}.png __cTop0.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-diastole   " __cTop0.png _cTop0.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:Slice $s1_1based" ECG/_enddia_s_slice${s1}.png _cTop1.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:Slice $s2_1based" ECG/_enddia_s_slice${s2}.png _cTop2.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _cTop{0,1,2}.png _cTop.png
 
-python3 ../utils/figcreator.py -t "LCv:end-systole" ECG/_endsys_s_slice${s0}.png _cBottom0.png
-python3 ../utils/figcreator.py --tile 1x3 _cBottom0.png ECG/_endsys_s_slice${s1}.png ECG/_endsys_s_slice${s2}.png  _cBottom.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-systole" ECG/_endsys_s_slice${s0}.png _cBottom0.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _cBottom0.png ECG/_endsys_s_slice${s1}.png ECG/_endsys_s_slice${s2}.png  _cBottom.png
 
-python3 ../utils/figcreator.py --tile 2x1 _cTop.png _cBottom.png _c1.png
-python3 ../utils/figcreator.py --resize "x:1614:iso" _c1.png _c2.png
-python3 ../utils/figcreator.py -t "TCh:SSA-FARY" _c2.png _c3.png
-python3 ../utils/figcreator.py -t "LTh:c)" _c3.png _c.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 _cTop.png _cBottom.png _c1.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:1614:iso" _c1.png _c2.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:SSA-FARY" _c2.png _c3.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:c)" _c3.png _c.png
 
 # ECG
-python3 ../utils/figcreator.py -t "LCv:end-diastole   " ECG/ECG-dia-cor${s0}.png _dTop0.png
-python3 ../utils/figcreator.py --tile 1x3 _dTop0.png ECG/ECG-dia-cor${s1}.png  ECG/ECG-dia-cor${s2}.png _dTop.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-diastole   " ECG/ECG-dia-cor${s0}.png _dTop0.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _dTop0.png ECG/ECG-dia-cor${s1}.png  ECG/ECG-dia-cor${s2}.png _dTop.png
 
-python3 ../utils/figcreator.py -t "LCv:end-systole" ECG/ECG-sys-cor${s0}.png _dBottom0.png
-python3 ../utils/figcreator.py --tile 1x3 _dBottom0.png ECG/ECG-sys-cor${s1}.png ECG/ECG-sys-cor${s2}.png  _dBottom.png
+python3 ../ssa_fary_utils/figcreator.py -t "LCv:end-systole" ECG/ECG-sys-cor${s0}.png _dBottom0.png
+python3 ../ssa_fary_utils/figcreator.py --tile 1x3 _dBottom0.png ECG/ECG-sys-cor${s1}.png ECG/ECG-sys-cor${s2}.png  _dBottom.png
 
-python3 ../utils/figcreator.py --tile 2x1 _dTop.png _dBottom.png _d1.png
-python3 ../utils/figcreator.py --resize "x:1614:iso" _d1.png _d2.png
-python3 ../utils/figcreator.py -t "TCh:ECG-CINE" _d2.png _d3.png
-python3 ../utils/figcreator.py -t "LTh:d)" _d3.png _d.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 _dTop.png _dBottom.png _d1.png
+python3 ../ssa_fary_utils/figcreator.py --resize "x:1614:iso" _d1.png _d2.png
+python3 ../ssa_fary_utils/figcreator.py -t "TCh:ECG-CINE" _d2.png _d3.png
+python3 ../ssa_fary_utils/figcreator.py -t "LTh:d)" _d3.png _d.png
 
 
 #--- Join ---
-python3 ../utils/figcreator.py --tile 3x1 _a.png _b.png _c.png _abc.png
-python3 ../utils/figcreator.py --tile 2x1 --spacing 35 _abc.png _d.png _SoS.png
+python3 ../ssa_fary_utils/figcreator.py --tile 3x1 _a.png _b.png _c.png _abc.png
+python3 ../ssa_fary_utils/figcreator.py --tile 2x1 --spacing 35 _abc.png _d.png _SoS.png
 
 
-python3 ../utils/figcreator.py --arrow 1008:816:40:45:4:9 _SoS.png _SoS.png
-python3 ../utils/figcreator.py --arrow 305:140:40:120:4:9 _SoS.png Fig6_SoS.png
+python3 ../ssa_fary_utils/figcreator.py --arrow 1008:816:40:45:4:9 _SoS.png _SoS.png
+python3 ../ssa_fary_utils/figcreator.py --arrow 305:140:40:120:4:9 _SoS.png Fig6_SoS.png
 
 rm _*.png
 rm ECG/_end*.png

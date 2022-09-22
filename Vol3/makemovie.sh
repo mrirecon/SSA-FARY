@@ -41,7 +41,7 @@ done
 for Rstate in 0; do
 	for i in {0000..0024}; do
 
-		python3 ../utils/figcreator.py --tile 1x6 SoS_R${Rstate}_frame_${i}_u_000{0,1,2,3,4,5}.png SoS_R${Rstate}_${i}.png
+		python3 ../ssa_fary_utils/figcreator.py --tile 1x6 SoS_R${Rstate}_frame_${i}_u_000{0,1,2,3,4,5}.png SoS_R${Rstate}_${i}.png
 	done
 done
 
