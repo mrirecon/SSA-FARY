@@ -91,8 +91,14 @@ c0=3
 c1=4
 bart slice 1 $r0 EOF_$w _eof_r0
 bart slice 1 $r1 EOF_$w _eof_r1
-bart slice 1 $c0 EOF_$w _eof_c0
-bart slice 1 $c1 EOF_$w _eof_c1
+bart slice 1 $c0 EOF_$w _eof_c0_neg
+bart slice 1 $c1 EOF_$w _eof_c1_neg
+
+# for some reason the sign flipped with respect to the orignal (at least
+# on the system I used for testing). this should be normalized to make it
+# more robust
+bart scale -- -1. _eof_c0_neg _eof_c0
+bart scale -- -1. _eof_c1_neg _eof_c1
 
 bart join 1 _eof_r{0,1} _eof_c{0,1} _tmp
 bart transpose 1 11 _tmp _tmp1
