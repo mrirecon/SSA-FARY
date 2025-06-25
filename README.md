@@ -2,7 +2,7 @@ These scripts reproduce the experiments described in the article:
 
 Rosenzweig S, Scholand N, Holme HCM, Uecker M. <br>
  **Cardiac and Respiratory Self-Gating in Radial MRI using an Adapted Singular Spectrum Analysis (SSA-FARY)**. <br>
-IEEE Trans Med Imag 2020, Early Access, DOI: 10.1109/TMI.2020.2985994 [1,2]
+IEEE Trans Med Imag 2020;39:3029-3041. DOI: 10.1109/TMI.2020.2985994 [1,2]
 
 The algorithms have been integrated into the Berkeley Advanced Reconstruction Toolbox (BART) [3] (commit 737082541c).
 
@@ -34,11 +34,10 @@ Please note that BART with GPU support is required.
 Running all scripts will take more than 24 hours, even on a multi-core compute system!
 
 
-If you need further help to run the scripts, I am happy to help you: sebastian.rosenzweig@med.uni-goettingen.de
 
 Mai 14, 2020 - Sebastian Rosenzweig
 
-[1] https://ieeexplore.ieee.org/document/9057630 (DOI: 10.1109/TMI.2020.2985994, early access)
+[1] https://ieeexplore.ieee.org/document/9057630
 [2] https://arxiv.org/abs/1812.09057v6
 [3] https://mrirecon.github.io/bart
 [4] https://www.gnu.org/software/bash/
