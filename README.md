@@ -1,3 +1,9 @@
+**The main repository has moved to: https://gitlab.tugraz.at/ibi/mrirecon/papers/SSA-FARY**
+
+**Please check there for updates.**
+
+
+
 These scripts reproduce the experiments described in the article:
 
 Rosenzweig S, Scholand N, Holme HCM, Uecker M. <br>
